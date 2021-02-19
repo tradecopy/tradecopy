@@ -1,5 +1,5 @@
 export MAX_DOWNLOAD_SPEED=0
-export MAX_CONCURRENT_DOWNLOADS=3
+export MAX_CONCURRENT_DOWNLOADS=10
 trackers_list=$(curl -Ns https://cdn.jsdelivr.net/gh/XIU2/TrackersListCollection@master/all.txt | awk '$1' | tr '\n' ',')
 aria2c --enable-rpc --rpc-listen-all=false --rpc-listen-port 6800 \
    --max-connection-per-server=10 --daemon=true \
